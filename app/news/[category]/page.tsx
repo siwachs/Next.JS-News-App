@@ -4,7 +4,7 @@ type Props = { params: { category: Category } };
 import fetchNews from "../../../lib/fetchNews";
 import NewsList from "../../Components/NewsList";
 
-// import { categories } from "../../../constants";
+import { categories } from "../../../constants";
 
 const NewsCategory = async ({ params: { category } }: Props) => {
   const news: NewsResponse = await fetchNews(category);
@@ -19,11 +19,11 @@ const NewsCategory = async ({ params: { category } }: Props) => {
 
 export default NewsCategory;
 
-// export async function generateStaticParams() {
-//   return categories.map((category) => ({
-//     category: category,
-//   }));
-// }
+export async function generateStaticParams() {
+  return categories.map((category) => ({
+    category: category,
+  }));
+}
 
 //1)It pre-built pages and cached them using revalidation...
 //2)localhost:3000/news/[category]

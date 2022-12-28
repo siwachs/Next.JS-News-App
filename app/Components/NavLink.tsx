@@ -10,11 +10,10 @@ type Props = {
 const NavLink = ({ category, isActive }: Props) => {
   return (
     <Link
-      prefetch={false}
-      className={`navLink ${
-        isActive &&
+      prefetch={true}
+      className={`navLink ${isActive &&
         "underline decoration-gray-400 underline-offset-4 font-bold text-lg"
-      }`}
+        }`}
       href={`/news/${category}`}
     >
       {category}
